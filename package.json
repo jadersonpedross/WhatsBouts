@@ -1,0 +1,46 @@
+{
+  "name": "agiwhats",
+  "version": "1.0.0",
+  "author": "Jaderson Pedrossini",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "WhatsApp da Agimob",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "whatsapp-web.js": "^1.14.1",
+    "puppeteer": "^19.7.5",
+    "qrcode-terminal": "^0.12.0",
+    "xlsx": "^0.18.5",
+    "node-schedule": "^2.1.0"
+  },
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "electron-builder": "^23.6.0"
+  },
+  "build": {
+    "appId": "com.agimob.agiwhats",
+    "productName": "WhatsApp for Agimob",
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "asarUnpack": [
+      "node_modules/puppeteer"
+    ],
+    "files": [
+      "package.json",
+      "package-lock.json",
+      "main.js",
+      "index.html",
+      "renderer.js",
+      "icon.ico",
+      "node_modules/**/*",
+      "dist/**/*"
+    ]
+  }
+}
