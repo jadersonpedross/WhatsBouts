@@ -49,21 +49,21 @@ Esse projeto é uma aplicação desktop feita com Electron para automatizar o en
 
 
 # Estrutura do Projeto
-    **index.html:** Interface gráfica com um wizard para guiar o usuário pelo processo de login, importação de contatos, configuração da mensagem e exibição do relatório.
-    **main.js:** Código principal do Electron que cria a janela da aplicação, inicializa o cliente do WhatsApp e gerencia a comunicação via IPC.
-    **renderer.js:** Lida com a lógica da interface, incluindo a leitura do arquivo Excel e o envio dos dados para o processo principal.
-    **package.json:** Define as dependências, scripts e configurações de build da aplicação.
+- **index.html:** Interface gráfica com um wizard para guiar o usuário pelo processo de login, importação de contatos, configuração da mensagem e exibição do relatório.
+- **main.js:** Código principal do Electron que cria a janela da aplicação, inicializa o cliente do WhatsApp e gerencia a comunicação via IPC.
+- **renderer.js:** Lida com a lógica da interface, incluindo a leitura do arquivo Excel e o envio dos dados para o processo principal.
+- **package.json:** Define as dependências, scripts e configurações de build da aplicação.
 
 # Tecnologias Utilizadas
-    **Electron:** Para criar a aplicação desktop.
-    **whatsapp-web.js:** Para interagir com o WhatsApp Web.
-    **Puppeteer:** Para manipulação headless do navegador.
-    **XLSX:** Para leitura dos arquivos de contatos.
-    **node-schedule:** Para agendamento das mensagens.
-    **Bootstrap 4:** Para o layout e design da interface.
+- **Electron:** Para criar a aplicação desktop.
+- **whatsapp-web.js:** Para interagir com o WhatsApp Web.
+- **Puppeteer:** Para manipulação headless do navegador.
+- **XLSX:** Para leitura dos arquivos de contatos.
+- **node-schedule:** Para agendamento das mensagens.
+- **Bootstrap 4:** Para o layout e design da interface.
 
 # Licença
-    Este projeto está licenciado sob a ISC License.
+Este projeto está licenciado sob a ISC License.
 
 # Autor
-    Jaderson Pedrossini
+Jaderson Pedrossini
