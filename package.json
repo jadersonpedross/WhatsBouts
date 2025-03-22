@@ -28,19 +28,6 @@
     "win": {
       "target": "nsis",
       "icon": "icon.ico"
-    },
-    "asarUnpack": [
-      "node_modules/puppeteer"
-    ],
-    "files": [
-      "package.json",
-      "package-lock.json",
-      "main.js",
-      "index.html",
-      "renderer.js",
-      "icon.ico",
-      "node_modules/**/*",
-      "dist/**/*"
-    ]
+    }
   }
 }

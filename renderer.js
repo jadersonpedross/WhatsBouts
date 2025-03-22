@@ -3,7 +3,6 @@ const XLSX = require('xlsx');
 
 let contacts = [];
 
-// Carregar e ler arquivo Excel
 document.getElementById('loadExcel').addEventListener('click', () => {
   const fileInput = document.getElementById('excelFile');
   if (fileInput.files.length === 0) {
@@ -17,7 +16,6 @@ document.getElementById('loadExcel').addEventListener('click', () => {
     const workbook = XLSX.read(data, { type: 'array' });
     const firstSheetName = workbook.SheetNames[0];
     const worksheet = workbook.Sheets[firstSheetName];
-    // Espera que o arquivo contenha as colunas "nome" e "numero"
     contacts = XLSX.utils.sheet_to_json(worksheet);
     displayContacts();
   };
@@ -42,7 +40,6 @@ function displayContacts() {
   container.appendChild(list);
 }
 
-// Exibir QR code e status do WhatsApp
 let whatsappStatus = document.getElementById('login-status');
 ipcRenderer.on('whatsapp-qr', (event, qr) => {
   const qrContainer = document.getElementById('qr');
@@ -61,7 +58,6 @@ ipcRenderer.on('whatsapp-status', (event, message) => {
   whatsappStatus.textContent = message;
 });
 
-// Função para envio de mensagens com 1 segundo de intervalo e agendamento
 function sendMessages() {
   const messageTemplate = document.getElementById('messageText').value;
   const scheduleTime = document.getElementById('scheduleTime').value;
@@ -80,7 +76,6 @@ function sendMessages() {
     function sendNext() {
       if (index < contacts.length) {
         let contact = contacts[index];
-        // Usa o placeholder {nome} para personalização
         let personalizedMessage = messageTemplate.replace(/{nome}/g, contact.nome);
         ipcRenderer.send('send-message', contact, personalizedMessage);
         index++;
@@ -104,7 +99,6 @@ function sendMessages() {
   }
 }
 
-// Atualiza o dashboard com o status de cada mensagem
 ipcRenderer.on('message-status', (event, data) => {
   let dashboardBody = document.getElementById('dashboardBody');
   let row = document.createElement('tr');

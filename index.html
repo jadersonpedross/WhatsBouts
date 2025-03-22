@@ -46,7 +46,6 @@
     <div class="container">
         <h1 class="mb-4 text-center">Envio de Mensagens em Lotes</h1>
 
-        <!-- Navegação do Wizard -->
         <ul class="nav nav-pills wizard-nav justify-content-center">
             <li class="nav-item">
                 <a class="nav-link active" data-step="1">1. Login</a>
@@ -62,7 +61,6 @@
             </li>
         </ul>
 
-        <!-- Etapa 1: Login no WhatsApp -->
         <div id="step-1" class="wizard-step active">
             <div class="card">
                 <div class="card-header bg-primary text-white">
@@ -78,7 +76,6 @@
             </div>
         </div>
 
-        <!-- Etapa 2: Carregar Contatos -->
         <div id="step-2" class="wizard-step">
             <div class="card">
                 <div class="card-header bg-success text-white">
@@ -99,7 +96,6 @@
             </div>
         </div>
 
-        <!-- Etapa 3: Configurar Mensagem -->
         <div id="step-3" class="wizard-step">
             <div class="card">
                 <div class="card-header bg-warning text-white">
@@ -124,7 +120,6 @@
             </div>
         </div>
 
-        <!-- Etapa 4: Relatório -->
         <div id="step-4" class="wizard-step">
             <div class="card">
                 <div class="card-header bg-info text-white">
@@ -153,7 +148,6 @@
 
     <script src="renderer.js"></script>
     <script>
-        // Controle de navegação do Wizard
         const steps = document.querySelectorAll('.wizard-step');
         const navLinks = document.querySelectorAll('.wizard-nav .nav-link');
 
@@ -161,7 +155,6 @@
             steps.forEach(step => step.classList.remove('active'));
             document.getElementById('step-' + stepNumber).classList.add('active');
 
-            // Atualiza a navegação ativa
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('data-step') === stepNumber.toString()) {
@@ -170,7 +163,6 @@
             });
         }
 
-        // Botões de navegação
         document.getElementById('to-step-2').addEventListener('click', () => showStep(2));
         document.getElementById('back-to-step-1').addEventListener('click', () => showStep(1));
         document.getElementById('to-step-3').addEventListener('click', () => showStep(3));
@@ -182,10 +174,8 @@
         });
         document.getElementById('back-to-step-3').addEventListener('click', () => showStep(3));
 
-        // Reinicia a operação recarregando a página
         document.getElementById('restart').addEventListener('click', () => location.reload());
 
-        // Permite navegação clicando diretamente no menu
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 const step = parseInt(e.target.getAttribute('data-step'));
