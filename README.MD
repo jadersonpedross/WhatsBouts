@@ -19,8 +19,8 @@ Esse projeto é uma aplicação desktop feita com Electron para automatizar o en
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/agiwhats.git
-   cd agiwhats
+   git clone https://github.com/jadersonpedross/WhatsBouts.git
+   cd WhatsBouts
 
 2. **Instale as dependências::**
    ```bash
