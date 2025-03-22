@@ -174,7 +174,7 @@
         });
         document.getElementById('back-to-step-3').addEventListener('click', () => showStep(3));
 
-        document.getElementById('restart').addEventListener('click', () => location.reload());
+        document.getElementById('restart').addEventListener('click', () => { showStep(2); });
 
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
